@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-paper text-ink font-body;
+    background-image: radial-gradient(circle at 1px 1px, rgba(36, 35, 29, 0.06) 1px, transparent 0);
+    background-size: 22px 22px;
+  }
+  ::selection {
+    @apply bg-ledger-green text-paper;
+  }
+  :focus-visible {
+    outline: 2px solid theme("colors.ledger.rust");
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .leader-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  .leader-row .leader-fill {
+    flex: 1;
+    border-bottom: 1px dotted theme("colors.line");
+    margin-bottom: 0.3em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
