@@ -20,9 +20,10 @@ export function ChecklistView() {
   const [terminado, setTerminado] = useState(false);
 
   const responder = (respuesta: string) => {
-    setRespuestas((actuales) => [...actuales, respuesta]);
+    const nuevasRespuestas = [...respuestas, respuesta];
+    setRespuestas(nuevasRespuestas);
 
-    if (respuestas.length + 1 >= preguntas.length) {
+    if (nuevasRespuestas.length >= preguntas.length) {
       setTerminado(true);
     }
   };
@@ -37,21 +38,23 @@ export function ChecklistView() {
   if (terminado) {
     return (
       <main className="mx-auto max-w-2xl px-6 py-14">
-        <div className="rounded-3xl border p-6 shadow-sm">
-          <p className="mb-2 text-sm font-medium">Checklist completada</p>
+        <div className="rounded-3xl border p-8 shadow-sm">
+          <p className="mb-2 text-sm font-medium text-gray-500">
+            Checklist completado
+          </p>
 
           <h1 className="mb-4 text-3xl font-bold">
             Ya tienes preparada tu lista 🐶
           </h1>
 
           <p className="mb-6 text-gray-600">
-            Has respondido las 10 preguntas. Guarda tus respuestas para
-            utilizarlas al preparar la llegada de tu perro.
+            Has respondido las 10 preguntas. Puedes utilizar tus respuestas
+            para preparar mejor la llegada y los gastos de tu perro.
           </p>
 
           <button
             onClick={reiniciar}
-            className="rounded-xl bg-black px-5 py-3 text-white"
+            className="rounded-xl bg-black px-5 py-3 font-medium text-white"
           >
             Volver a empezar
           </button>
