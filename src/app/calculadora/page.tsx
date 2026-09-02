@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { CalculatorWizard } from "@/components/calculator/CalculatorWizard";
+import { CalculatorWizard } from "@/components/calculadora/CalculatorWizard";
 
 export const metadata: Metadata = {
   title: "Calculadora de presupuesto para tu perro | La letra pequeña",
