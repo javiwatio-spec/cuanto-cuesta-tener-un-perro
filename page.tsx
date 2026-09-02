@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { ChecklistView } from "@/components/checklist/ChecklistView";
+import { ChecklistView } from "@/app/components/checklist/ChecklistView
 
 export const metadata: Metadata = {
   title: "Prepara la llegada de tu perro | La letra pequeña",
